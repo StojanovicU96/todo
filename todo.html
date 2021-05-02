@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="todo.css">
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/796ce6486c.js" crossorigin="anonymous"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+    <!-- Old jquery version for drag and drop? -->
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </head>
+  <body class="body-dark">
+    <div class="container-fluid">
+      <div class="row main-content mx-2 mt-5">
+        <div class="col-auto mr-auto">
+          <h2>TODO</h2>
+        </div>
+
+        <div class="col-auto">
+          <img id="change-img" src="images/icon-sun.svg" alt="">
+        </div>
+
+        <div class="col-12">
+          <div id="new-todo-section" class="dark-new-todo-section shadow">
+            <div class="dark-form-check">
+              <input type="checkbox" id="checkbox">
+              <label for="checkbox"></label>
+              <input type="text" name="" value="" placeholder="Creat a new todo" class="dark-new-todo">
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12">
+          <div class="dark-todo-section shadow">
+            <ul id="sortable">
+              <li class="todo-item dark-form-check ui-state-default">
+                <div class="row">
+                  <div class="col-auto mr-auto proba">
+                    <input type="checkbox" disabled="true" id="1">
+                    <label for="1"></label>
+                    <p class="dark-todo-item-description">Complete online JavaScript course</p>
+                  </div>
+                  <div class="col-auto">
+                    <img class="cross-img" src="images/icon-cross.svg" alt="">
+                  </div>
+                </div>
+              </li>
+              <li class="todo-item dark-form-check ui-state-default">
+                <div class="row">
+                  <div class="col-auto mr-auto">
+                    <input type="checkbox" disabled="true" id="2">
+                    <label for="2"></label>
+                    <p class="dark-todo-item-description">Go to gym</p>
+                  </div>
+                  <div class="col-auto">
+                    <img class="cross-img" src="images/icon-cross.svg" alt="">
+                  </div>
+                </div>
+              </li>
+              <li class="todo-item dark-form-check ui-state-default">
+                <div class="row">
+                  <div class="col-auto mr-auto">
+                    <input type="checkbox" disabled="true" id="3">
+                    <label for="3"></label>
+                    <p class="dark-todo-item-description">Take a dog for a walk</p>
+                  </div>
+                  <div class="col-auto">
+                    <img class="cross-img" src="images/icon-cross.svg" alt="">
+                  </div>
+                </div>
+              </li>
+              <li class="todo-item dark-form-check ui-state-default">
+                <div class="row">
+                  <div class="col-auto mr-auto">
+                    <input type="checkbox" disabled="true" id="4">
+                    <label for="4"></label>
+                    <p class="dark-todo-item-description">Something</p>
+                  </div>
+                  <div class="col-auto">
+                    <img class="cross-img" src="images/icon-cross.svg" alt="">
+                  </div>
+                </div>
+              </li>
+              <li class="todo-item dark-form-check ui-state-default">
+                <div class="row">
+                  <div class="col-auto mr-auto">
+                    <input type="checkbox" disabled="true" id="5">
+                    <label for="5"></label>
+                    <p class="dark-todo-item-description">Go to grocery store</p>
+                  </div>
+                  <div class="col-auto">
+                    <img class="cross-img" src="images/icon-cross.svg" alt="">
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <div class="todo-info-section-mob">
+              <div class="row">
+                <div class="col-auto mr-auto">
+                  <p class="todo-info-text todo-item-description items-left">5 items left</p>
+                </div>
+                <div class="col-auto">
+                  <p class="todo-info-text todo-item-description clear-btn btnHover">Clear Completed</p>
+                </div>
+              </div>
+            </div>
+            <div class="todo-info-section-desk">
+              <div class="row">
+                <div class="col-auto mr-auto">
+                  <p class="todo-info-text todo-item-description"><span id="num-of-todos">5</span> items left</p>
+                </div>
+                <div class="sort-section-desk">
+                  <div class="row sort-section-desk-info">
+                    <div class="col">
+                      <p class="all-btn btnHover">All</p>
+                    </div>
+                    <div class="col">
+                      <p class="active-btn btnHover">Active</p>
+                    </div>
+                    <div class="col">
+                      <p class="completed-btn btnHover">Completed</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-auto">
+                  <p class="todo-info-text todo-item-description clear-btn btnHover">Clear Completed</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12">
+          <div class="dark-sort-section-mob shadow">
+            <div class="row sort-section-mob-info">
+              <div class="col">
+                <p class="all-btn btnHover">All</p>
+              </div>
+              <div class="col">
+                <p class="active-btn btnHover">Active</p>
+              </div>
+              <div class="col">
+                <p class="completed-btn btnHover">Completed</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 drag-drop-info">
+          <p>Drag and drop to reorder  list</p>
+        </div>
+
+
+      </div>
+    </div>
+
+    <script type="text/javascript" src="todo.js">
+    </script>
+  </body>
+</html>
